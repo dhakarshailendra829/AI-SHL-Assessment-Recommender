@@ -1,11 +1,3 @@
-"""
-Transforms SHL's raw scraped catalog export (entity_id/name/link/job_levels/
-languages/duration/description/keys schema) into the app's catalog.json
-schema (name/url/test_type/description + retained metadata for filtering).
-
-Run: python scripts/transform_catalog.py raw_catalog.json
-Writes: app/catalog/catalog.json
-"""
 import json
 import re
 import sys

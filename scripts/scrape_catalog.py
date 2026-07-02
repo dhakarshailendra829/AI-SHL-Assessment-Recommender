@@ -1,15 +1,3 @@
-"""
-Scrapes the SHL product catalog (Individual Test Solutions only) into catalog.json.
-
-Usage:
-    pip install requests beautifulsoup4 lxml
-    python scripts/scrape_catalog.py
-
-The catalog page is server-rendered HTML, paginated 12 items per page via
-?start=N&type=1 (Individual Test Solutions). type=2 is Pre-packaged Job
-Solutions and is explicitly excluded per the assignment scope.
-"""
-
 import json
 import time
 from pathlib import Path

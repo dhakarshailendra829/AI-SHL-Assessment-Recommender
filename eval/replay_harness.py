@@ -1,24 +1,3 @@
-"""
-Replays the 10 provided conversation traces against a running /chat endpoint,
-using Gemini to play the simulated user from each trace's persona and facts.
-
-Drop the downloaded trace JSON files into tests/test_traces/ before running.
-Expected trace schema (one file per persona):
-
-{
-  "persona": "Hiring manager for a backend Java role",
-  "facts": {
-    "role": "Java developer",
-    "seniority": "Mid-level, 4 years",
-    "skills": ["Java", "stakeholder management"]
-  },
-  "expected_assessment_names": ["Java 8 (New)", "OPQ32r"]
-}
-
-Usage:
-    python eval/replay_harness.py --base-url http://localhost:8000 --max-turns 8
-"""
-
 import argparse
 import json
 from pathlib import Path
