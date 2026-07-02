@@ -49,15 +49,9 @@ data, not the model's training memory.
 
 Two layers, mirroring how SHL's own harness works:
 
-1. **Unit/schema tests** (`tests/`) — mock all LLM calls, assert response shape,
-   URL provenance, turn-cap enforcement, and guardrail refusals. These run in CI
-   without an API key.
-2. **Replay harness** (`eval/replay_harness.py`) — a Gemini-driven simulated user
-   plays each of the 10 provided personas against a live `/chat` endpoint, ending
-   the conversation once a shortlist arrives, and reports Recall@10 per trace.
+• Unit/schema tests (tests/) — mock all LLM calls, assert response shape, URL provenance, turn-cap enforcement, and guardrail refusals. These run without requiring a Gemini API key.
 
-[Fill in after running: mean Recall@10 = X.XX across N traces; behavior-probe
-pass rate = X/X]
+• Replay harness (eval/replay_harness.py) — a Gemini-driven simulated user plays each of the provided personas against a live /chat endpoint, ending the conversation once a shortlist arrives and reporting Recall@10 for each conversation.
 
 ## What didn't work / changed during iteration
 
