@@ -58,20 +58,24 @@ tests/                       schema + guardrail tests, mocked LLM calls
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.tx
 cp .env.example .env   # add your GEMINI_API_KEY
 ```
 
+
+### Replace with
+
+````md
 ## Running locally
 
 ```bash
+pytest tests/ -v
 uvicorn app.main:app --reload
 curl http://localhost:8000/health
-```
-
+````
 ## Catalog data
 
-`app/catalog/catalog.json` ships with **106 real, verified entries** sourced directly from SHL's
+`app/catalog/catalog.json` ships with **106 real catalog entries** sourced directly from SHL's
 live scraped catalog export (the same `entity_id`/`job_levels`/`languages`/`duration`/`description`/`keys`
 schema you get from the catalog page), covering every assessment referenced in SHL's own example
 conversation transcripts — Java/Spring/SQL/AWS/Docker, OPQ32r and its report family, Verify G+ and the
